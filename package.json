@@ -4,7 +4,7 @@
   "description": "## Specifications",
   "main": "index.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "NODE_ENV=development node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,14 @@
   "homepage": "https://github.com/nodatall/fanatical-woodpecker-todolist#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "config": "^1.21.0",
     "express": "^4.14.0",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
+    "pg-native": "^1.10.0",
     "sequelize": "^3.24.3"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0"
   }
 }
