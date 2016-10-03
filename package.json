@@ -1,0 +1,27 @@
+{
+  "name": "fanatical-woodpecker-todolist",
+  "version": "1.0.0",
+  "description": "## Specifications",
+  "main": "index.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodatall/fanatical-woodpecker-todolist.git"
+  },
+  "keywords": [],
+  "author": "Sylvan Swierkosz, Davina Taylor, RC Brown, SJ Pratt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodatall/fanatical-woodpecker-todolist/issues"
+  },
+  "homepage": "https://github.com/nodatall/fanatical-woodpecker-todolist#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "express": "^4.14.0",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.3"
+  }
+}
