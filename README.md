@@ -19,6 +19,11 @@ Additional specs:
 - [ ] User can rearrange to do list items.
 
 ---
+#### Instructions for setting up local database
+- Download app http://postgresapp.com/ ('http://postgresapp.com/') then open
+- Set path by adding the follow line to ~/.bash_profile (if using zsh ~/.zshrc): export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+- Open terminal and type: psql
+- Then create database: createdb mydbname
 
 ## License
 
