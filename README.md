@@ -8,7 +8,7 @@ As a user, I can:
 - [ ] check items off as complete.
 - [ ] log into my account.
 - [ ] edit  text on existing to do's.
-
+Additional specs:
 - [ ] Create the back end using node and express.
 - [ ] Create/manage databases with Sequelize and Postgres
 - [ ] Deploy the app to heroku.
