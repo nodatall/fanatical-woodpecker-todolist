@@ -2,29 +2,66 @@
 
 ## Specifications
 
-- [ ] Create the back end using node and express.
-- [ ] Create/manage databases with Sequelize and Postgres
-- [ ] Deploy the app to heroku.
-- [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
-
-#### Stretch Goals:
-Front-end - Users can do the following:
-- [ ] create items.
-- [ ] delete items.
-- [ ] check items off as complete.
-- [ ] log into my account.
-- [ ] edit  text on existing to do's.
+- [X] Design data model
+- [ ] Implement web API
+  - [ ] Authentication via cookies w/ JWT
+    - [ ] Login
+    - [ ] Logout
+    - [ ] Error on invalid credentials
+  - [ ] Retrieve authenticated user's profile data
+  - [ ] Update authenticated user's name, email, password
+  - [ ] Retrieve user's lists
+  - [ ] Create new list
+  - [ ] Update existing list
+  - [ ] Delete list
+  - [ ] Retrieve a list's items
+  - [ ] Edit an item's description
+  - [ ] Mark item as completed/not completed
+  - [ ] Delete an item
+- [X] Implement tests
+- [X] Create documentation
+  - [X] Local environment setup
+  - [X] Deployment
+  - [X] Testing
+  - [X] Licensing (OSS, e.g. MIT)
 
 ---
+### Instructions for running app in local environment
+- Download and install node: https://nodejs.org/en/download/
+- Navigate to repo inside terminal, then type:
+```
+$ npm i
+```
+
 #### Instructions for setting up local database
-- Download and install node: https://nodejs.org/en/download/(https://nodejs.org/en/download/)
-- In terminal, install dependencies: npm i
-- Download postgres app http://postgresapp.com/ ('http://postgresapp.com/') then open
-- Set path by adding the follow line to ~/.bash_profile (if using zsh ~/.zshrc): export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-- In terminal, create database: createdb mydbname
+
+- Download postgres app http://postgresapp.com/ then open
+- Set path by adding the follow line to ~/.bash_profile (if using zsh ~/.zshrc):
+```
+$ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+```
+- In terminal:  
+```
+$ createdb mydbname
+```
+
 - Create a new file in root level of repo: .env.development
-- Paste inside .env.development: DATABASE_URL=postgresql://localhost/mydbname
-- In terminal, type: npm run start
+- Paste inside the .env.development file:
+
+```
+ $ DATABASE_URL=postgresql://localhost/mydbname
+ ```
+
+- In terminal:
+```
+$ npm run start
+```
+
+#### Instructions for running tests
+- In terminal:
+```
+$ npm test
+```
 
 
 ## License
