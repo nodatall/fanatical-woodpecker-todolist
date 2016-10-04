@@ -2,28 +2,30 @@
 
 ## Specifications
 
-As a user, I can:
-- [ ] create items.
-- [ ] delete items.
-- [ ] check items off as complete.
-- [ ] log into my account.
-- [ ] edit  text on existing to do's.
-
-Additional specs:
 - [ ] Create the back end using node and express.
 - [ ] Create/manage databases with Sequelize and Postgres
 - [ ] Deploy the app to heroku.
 - [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 #### Stretch Goals:
-- [ ] User can rearrange to do list items.
+Front-end - Users can do the following:
+- [ ] create items.
+- [ ] delete items.
+- [ ] check items off as complete.
+- [ ] log into my account.
+- [ ] edit  text on existing to do's.
 
 ---
 #### Instructions for setting up local database
-- Download app http://postgresapp.com/ ('http://postgresapp.com/') then open
+- Download and install node: https://nodejs.org/en/download/(https://nodejs.org/en/download/)
+- In terminal, install dependencies: npm i
+- Download postgres app http://postgresapp.com/ ('http://postgresapp.com/') then open
 - Set path by adding the follow line to ~/.bash_profile (if using zsh ~/.zshrc): export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-- Open terminal and type: psql
-- Then create database: createdb mydbname
+- In terminal, create database: createdb mydbname
+- Create a new file in root level of repo: .env.development
+- Paste inside .env.development: DATABASE_URL=postgresql://localhost/mydbname
+- In terminal, type: npm run start
+
 
 ## License
 
