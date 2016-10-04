@@ -4,6 +4,7 @@
 
 - [X] Design data model
 - [ ] Implement web API
+  - [ ] Start a server listening on a specified port with `npm start`
   - [ ] Authentication via cookies w/ JWT
     - [ ] Login
     - [ ] Logout
