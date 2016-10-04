@@ -43,14 +43,14 @@ $ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 ```
 - In terminal:  
 ```
-$ createdb mydbname
+$ createdb todo
 ```
 
 - Create a new file in root level of repo: .env.development
 - Paste inside the .env.development file:
 
 ```
- $ DATABASE_URL=postgresql://localhost/mydbname
+ $ DATABASE_URL=postgresql://localhost/todo
  ```
 
 - In terminal:
