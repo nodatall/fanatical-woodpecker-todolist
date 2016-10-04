@@ -9,5 +9,5 @@ app.get('*', function (req, res) {
 })
 
 app.listen(config.port, function () {
-  console.log(`To Do app listening on port ${config.port}!`)
+  console.log(`To Do app listening on port ${config.port}, hay!`)
 })
