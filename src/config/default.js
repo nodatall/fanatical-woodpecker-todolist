@@ -11,4 +11,8 @@ module.exports = {
       },
     },
   },
+  auth: {
+    cookieName: 'todo_user',
+    cookieSecret: process.env.AUTH_SECRET || 'mysecretyo',
+  },
 }

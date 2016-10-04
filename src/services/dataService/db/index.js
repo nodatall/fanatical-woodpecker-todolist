@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const config = require('../config')
+const config = require('../../../config')
 
 let db = new Sequelize(config.db.url, config.db.options)
 
@@ -36,5 +36,7 @@ function sync() {
 }
 
 module.exports = {
-  sync
+  sync,
+  User,
+  List,
 }
