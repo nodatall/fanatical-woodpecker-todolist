@@ -1,19 +1,23 @@
 const {User, List} = require('./db')
 
-function getUser(userId) {
+function getUser(id) {
   return User.findOne({
-    where: {id: userId},
+    where: {id},
   })
 }
 
-function getList(userId) {
-	return List.findOne({
-		where: {id: userId},
-	})
+function findLists() {
+  return List.findAll()
+}
+
+function getList(id) {
+  return List.findOne({
+    where: {id},
+  })
 }
 
 module.exports = {
   getUser,
+  findLists,
   getList,
 }
-

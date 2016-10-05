@@ -5,40 +5,37 @@ let db = new Sequelize(config.db.url, config.db.options)
 
 const User = db.define('user', {
   name: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
   },
   email: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
   },
   passwordHash: {
-    type: Sequelize.TEXT
-  }, 
-  timestamps: false,
-  
+    type: Sequelize.TEXT,
+  },
 })
 
 const List = db.define('list', {
   title: {
-    type: Sequelize.STRING
-  }
+    type: Sequelize.STRING,
+  },
 })
-
 List.belongsTo(User)
 
-const listItem = db.define('listItem', {
+const ListItem = db.define('listItem', {
   description: {
-    type: Sequelize.TEXT
-  }
+    type: Sequelize.TEXT,
+  },
 })
-
-listItem.belongsTo(List)
+ListItem.belongsTo(List)
 
 function sync() {
   return db.sync()
 }
 
 module.exports = {
-  sync,
+  db,
   User,
   List,
+  ListItem,
 }

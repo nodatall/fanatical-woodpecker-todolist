@@ -3,20 +3,22 @@ const express = require('express')
 
 const config = require('./config')
 const handleAuth = require('./middleware/auth')
-const retrieveList = require('./middleware/retrieveList')
 const routes = require('./routes')
 
 const app = express()
 
 app.use(cookieParser())
 app.use(handleAuth())
-app.use(retrieveList())
-
 
 app.use(routes)
 
 app.get('*', function (req, res) {
   res.status(500).send('Nah, son.')
+})
+
+app.get(function (err, req, res, next) {
+  console.error(err)
+  res.status(500).send('Sorry, no bueno.')
 })
 
 app.listen(config.port, function () {
