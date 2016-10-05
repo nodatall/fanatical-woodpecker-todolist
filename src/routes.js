@@ -5,9 +5,6 @@ const router = express()
 const userController = require('./controllers/userController')
 const listController = require('./controllers/listController')
 
-router.get('/login', userController.login)
-router.get('/logout', userController.logout)
-
 router.get('/lists', listController.findLists)
 router.get('/lists/:listId', listController.getList)
 
