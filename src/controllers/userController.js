@@ -11,6 +11,10 @@ function logout(req, res, next) {
   // return OK
 }
 
+function home(req, res) {
+	//retrieve list
+}
+
 module.exports = {
   login,
   logout,

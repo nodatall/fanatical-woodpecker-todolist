@@ -12,7 +12,9 @@ const User = db.define('user', {
   },
   passwordHash: {
     type: Sequelize.TEXT
-  }
+  }, 
+  timestamps: false,
+  
 })
 
 const List = db.define('list', {

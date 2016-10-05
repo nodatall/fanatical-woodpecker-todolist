@@ -1,4 +1,4 @@
-const {User} = require('./db')
+const {User, List} = require('./db')
 
 function getUser(userId) {
   return User.findOne({
@@ -6,6 +6,14 @@ function getUser(userId) {
   })
 }
 
+function getList(userId) {
+	return List.findOne({
+		where: {id: userId},
+	})
+}
+
 module.exports = {
   getUser,
+  getList,
 }
+

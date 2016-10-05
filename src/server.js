@@ -3,12 +3,15 @@ const express = require('express')
 
 const config = require('./config')
 const handleAuth = require('./middleware/auth')
+const retrieveList = require('./middleware/retrieveList')
 const routes = require('./routes')
 
 const app = express()
 
 app.use(cookieParser())
 app.use(handleAuth())
+app.use(retrieveList())
+
 
 app.use(routes)
 
