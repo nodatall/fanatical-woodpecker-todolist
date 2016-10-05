@@ -9,7 +9,7 @@
     "db:sync": "NODE_ENV=development node src/scripts/dbSync.js",
     "db:reset": "NODE_ENV=development node src/scripts/dbReset.js",
     "db:seed": "NODE_ENV=development node src/scripts/dbSeed.js",
-    "test": "node_modules/.bin/tape src/**/*.test.js"
+    "test": "NODE_ENV=development node_modules/.bin/tape src/**/*.test.js"
   },
   "repository": {
     "type": "git",
