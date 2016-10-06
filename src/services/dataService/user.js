@@ -1,14 +1,14 @@
 const {User} = require('./db')
 
-// function findUsers() {
-// 	return User.findAll()
-// }
+function findUsers() {
+	return User.findAll()
+}
 
-// function getUser(id) {
-//   return User.findOne({
-//     where: {id},
-//   })
-// }
+function getUser(id) {
+  return User.findOne({
+    where: {id},
+  })
+}
 
 function createUser(name, email, passwordHash) {
 	return User.create({
@@ -18,24 +18,24 @@ function createUser(name, email, passwordHash) {
 	})
 }
 
-// function updateUser(id) {
-// 	return User.findOne({
-// 		where: {id},
-// 	})
-// }
+function updateUser(id) {
+	return User.findOne({
+		where: {id},
+	})
+}
 
-// function deleteUser(id) {
-// 	return User.findOne({
-// 		where: {id},
-// 	})
-// }
+function deleteUser(id) {
+	return User.findOne({
+		where: {id},
+	})
+}
 
 
 
 module.exports = {
-	// findUsers,
-	// getUser,
+	findUsers,
+	getUser,
 	createUser,
-	// updateUser,
-	// deleteUser,
+	updateUser,
+	deleteUser,
 }
