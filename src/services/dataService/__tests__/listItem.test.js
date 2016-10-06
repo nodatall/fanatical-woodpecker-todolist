@@ -1,11 +1,11 @@
 const test = require('../../../test')
 const seedData = require('../../../test/seedData')
-const {findListsItem, createListsItem, deleteListsItem, updateListItem} = require('../../dataService/listItemFunctions')
+const {findListItem, createListsItem, deleteListsItem, updateListItem, getListItem} = require('../../dataService/listItemFunctions')
 
 test('dataService', function(t) {
   return seedData().then(() => {
     t.test('Get lists item by id test', function (st) {
-      findListsItem(1).then(function (listsItem) {
+      findListItem(1).then(function (listsItem) {
         st.equal(listsItem.id, 1, 'Returned list item id' )
         st.end()
       })
@@ -18,7 +18,7 @@ test('dataService', function(t) {
     })
     t.test('Delete list item', function (st) {
       deleteListsItem(1).then(function () {
-        findListsItem(1).then(function (listsItem) {
+        findListItem(1).then(function (listsItem) {
           st.equal(listsItem, null, 'Deleted a lists item' )
           st.end()
         })
@@ -27,6 +27,12 @@ test('dataService', function(t) {
     t.test('Update list item', function (st) {
       updateListItem(2,{description: 'blarg'}).then(function (listsItem) {
         st.equal(listsItem.description, 'blarg', 'Updated list item description and returned new description' )
+        st.end()
+      })
+    })
+    t.test('Get list\'s items', function (st) {
+      getListItem(2).then(function (listItems) {
+        st.ok(listItems.length > 0, 'Returned a non-empty list')
         st.end()
       })
     })
