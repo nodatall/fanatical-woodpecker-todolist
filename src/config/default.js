@@ -9,7 +9,7 @@ module.exports = {
         maxConnections: 5,
         maxIdleTime: 30,
       },
-      logging: false,
+      // logging: false,
     },
   },
   auth: {

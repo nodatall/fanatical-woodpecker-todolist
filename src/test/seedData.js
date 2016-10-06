@@ -1,49 +1,67 @@
 const Promise = require('bluebird')
 const {reset, User, List, ListItem} = require('../services/dataService/db')
 
-function seedData() {
+function seedData(options) {
+  const {
+    userCount = 2,
+    listCount = 2,
+    listItemCount = 2,
+  } = options || {}
+
   return reset({cascade: true})
     .then(() => {
-      return seedUsers({count: 2})
+      const users = []
+      for (let i = 0; i < userCount; i++) {
+        users.push(randomUser())
+      }
+      return Promise.mapSeries(users, user => {
+        return User.create(user)
+      })
     })
     .then(users => {
-      return Promise.mapSeries(users, user => {
-        return seedLists(user.id, {count: 2})
-          .then(lists => {
-            return Promise.mapSeries(lists, list => {
-              return seedListItems(list.id, {count: 2})
-            })
-          })
+      const lists = []
+      users.forEach(user => {
+        for (let i = 0; i < listCount; i++) {
+          lists.push(randomList(user.id))
+        }
+      })
+      return Promise.mapSeries(lists, list => {
+        return List.create(list)
+      })
+    })
+    .then(lists => {
+      const listItems = []
+      lists.forEach(list => {
+        for (let i = 0; i < listItemCount; i++) {
+          listItems.push(randomListItem(list.id))
+        }
+      })
+      return Promise.mapSeries(listItems, listItem => {
+        return ListItem.create(listItem)
       })
     })
 }
 
-function seedUsers({count = 1}) {
-  const data = []
-  for (let i = 0; i < count; i++) {
-    const name = randomName()
-    data.push({
-      name,
-      email: `${name}@me.com`,
-    })
+function randomUser() {
+  const name = randomName()
+  return {
+    name,
+    email: `${name}@me.com`,
   }
-  return User.bulkCreate(data)
 }
 
-function seedLists(userId, {count = 1}) {
-  const data = []
-  for (let i = 0; i < count; i++) {
-    data.push({userId, title: `List ${randomName()}`})
+function randomList(userId) {
+  return {
+    userId,
+    title: `List ${randomName()}`
   }
-  return List.bulkCreate(data)
 }
 
-function seedListItems(listId, {count = 1}) {
-  const data = []
-  for (let i = 0; i < count; i++) {
-    data.push({listId, description: `List Item ${randomName()}`})
+function randomListItem(listId) {
+  return {
+    listId,
+    description: `List Item ${randomName()}`
   }
-  return ListItem.bulkCreate(data)
 }
 
 function randomName() {
