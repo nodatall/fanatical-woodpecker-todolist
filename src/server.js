@@ -21,8 +21,8 @@ app.get(function (err, req, res, next) {
   res.status(500).send('Sorry, no bueno.')
 })
 
-console.log('Initializing data service...')
-dataService.init().then(() => {
+console.log('Initializing db...')
+dataService.sync().then(() => {
   app.listen(config.port, function () {
     console.log(`${config.appName} listening on port ${config.port}!`)
   })
