@@ -1,5 +1,6 @@
 const Promise = require('bluebird')
-const {reset, models: {User, List, ListItem}} = require('../services/dataService/db')
+
+const {reset, models: {User, List, ListItem}} = require('src/services/dataService/db')
 
 function seedData() {
   // TODO: allow to be specified as options

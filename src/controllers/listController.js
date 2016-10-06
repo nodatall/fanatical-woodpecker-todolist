@@ -1,4 +1,4 @@
-const dataService = require('../services/dataService')
+const dataService = require('src/services/dataService')
 
 function findLists(req, res, next) {
   dataService.findLists()

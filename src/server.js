@@ -1,10 +1,10 @@
 const bodyParser = require('body-parser')
 const express = require('express')
 
-const config = require('./config')
-const routes = require('./routes')
+const config = require('src/config')
+const routes = require('src/routes')
 
-const dataService = require('./services/dataService')
+const dataService = require('src/services/dataService')
 
 const app = express()
 

@@ -1,6 +1,13 @@
-const test = require('../../../test')
-const seedData = require('../../../test/seedData')
-const {getUser, findUsers, createUser, deleteUser, updateUser} = require('../../dataService/user')
+const test = require('src/test')
+const seedData = require('src/test/seedData')
+
+const {
+  getUser,
+  findUsers,
+  createUser,
+  deleteUser,
+  updateUser
+} = require('../user')
 
 test.skip('dataService', function(t) {
   return seedData().then(() => {

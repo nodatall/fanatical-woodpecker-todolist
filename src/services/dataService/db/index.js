@@ -1,6 +1,7 @@
 const Promise = require('bluebird')
 const Sequelize = require('sequelize')
-const config = require('../../../config')
+
+const config = require('src/config')
 
 let db = new Sequelize(config.db.url, config.db.options)
 

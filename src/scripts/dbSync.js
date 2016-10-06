@@ -1,4 +1,4 @@
-const dataService = require('../services/dataService')
+const dataService = require('src/services/dataService')
 
 dataService.sync()
   .then(() => {
