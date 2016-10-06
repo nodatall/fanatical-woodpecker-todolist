@@ -4,6 +4,8 @@ const express = require('express')
 const config = require('./config')
 const routes = require('./routes')
 
+const dataService = require('./services/dataService')
+
 const app = express()
 
 app.use(bodyParser.json())
@@ -11,7 +13,7 @@ app.use(bodyParser.json())
 app.use(routes)
 
 app.get('*', function (req, res) {
-  res.status(500).send('Nah, son.')
+  res.status(500).send('Nah, son. We can\'t find that.')
 })
 
 app.get(function (err, req, res, next) {
@@ -19,6 +21,9 @@ app.get(function (err, req, res, next) {
   res.status(500).send('Sorry, no bueno.')
 })
 
-app.listen(config.port, function () {
-  console.log(`To Do app listening on port ${config.port}, hay!`)
+console.log('Initializing data service...')
+dataService.init().then(() => {
+  app.listen(config.port, function () {
+    console.log(`${config.appName} listening on port ${config.port}!`)
+  })
 })

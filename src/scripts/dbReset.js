@@ -1,6 +1,6 @@
-const {reset} = require('../services/dataService/db')
+const dataService = require('../services/dataService')
 
-reset({cascade: true})
+dataService.reset({cascade: true})
   .then(() => {
     console.log('Database reset complete')
     process.exit(0)
