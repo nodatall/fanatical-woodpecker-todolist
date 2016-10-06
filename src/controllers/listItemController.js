@@ -1,7 +1,7 @@
 const dataService = require('../services/dataService/listItemFunctions')
 
 function findListItems(req, res, next) {
-  dataService.findListItems(req.id)
+  dataService.findListItems()
     .then(listsItem => {
       res.status(200).json(listsItem)
     })
@@ -9,23 +9,7 @@ function findListItems(req, res, next) {
 }
 
 function createListItem(req, res, next) {
-  dataService.createListItem(req.id, req.description)
-    .then(listsItem => {
-      res.status(200).json(listsItem)
-    })
-    .catch(next)
-}
-
-function deleteListItem(req, res, next) {
-  dataService.deleteListItem(req.id)
-    .then(listsItem => {
-      res.status(204).send("Successfully deleted")
-    })
-    .catch(next)
-}
-
-function updateListItem(req, res, next) {
-  dataService.updateListItem(req.id, req.data)
+  dataService.createListItem(req.body)
     .then(listsItem => {
       res.status(200).json(listsItem)
     })
@@ -33,9 +17,25 @@ function updateListItem(req, res, next) {
 }
 
 function getListItem(req, res, next) {
-  dataService.getListItem(req.id)
+  dataService.getListItem(req.params.itemId)
     .then(listItems => {
       res.status(200).send(listItems)
+    })
+    .catch(next)
+}
+
+function updateListItem(req, res, next) {
+  dataService.updateListItem(req.params.itemId, req.body)
+    .then(listsItem => {
+      res.status(200).json(listsItem)
+    })
+    .catch(next)
+}
+
+function deleteListItem(req, res, next) {
+  dataService.deleteListItem(req.params.itemId)
+    .then(listsItem => {
+      res.status(204).send("Successfully deleted")
     })
     .catch(next)
 }

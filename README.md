@@ -28,7 +28,7 @@
 
 ---
 ### Instructions for running app in local environment
-- Download and install node: https://nodejs.org/en/download/
+- [Download](https://nodejs.org/en/download/) and install node
 - Navigate to repo inside terminal, then type:
 ```
 $ npm i
@@ -36,7 +36,7 @@ $ npm i
 
 #### Instructions for setting up local database
 
-- Download postgres app http://postgresapp.com/ then open
+- [Download](http://postgresapp.com/) postgres app, then open
 - Set path by adding the follow line to ~/.bash_profile (if using zsh ~/.zshrc):
 ```
 $ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
@@ -64,6 +64,17 @@ $ npm run start
 $ npm test
 ```
 
+### Instructions for deploying to Heroku
+- Create Heroku account [here](https://signup.heroku.com/login?redirect-url=https%3A%2F%2Fid.heroku.com%2Foauth%2Fauthorize%3Fclient_id%3D9e08c4e5-b105-43bb-a1fc-ba4c58a2ab8f%26response_type%3Dcode%26scope%3Dglobal%252Cplatform%26state%3DFe26.2**c35f51c53f436c1210bc19c19a1fd046462655fd561c2376beb5ef83d0ca50f4*FZAxbfqK8ft0Apg1YqAFOA*z7RaEUdX2vFq-NVjT6isiEwA1nGgxt6VcpBbShxZgHCRrNzQoxZjW0ZexVT264IYfQ24G5lBu8rpUDlJh8NlLw*1475793613238*1e460e093186430472b34f463d6206e0a5430a5c6f0ce374a58262ca0e13455b*PFDv8K3fSXNNHa-95kqgq6fHez7EYeTVzfWglmW_jYU) if you don't have one already
+- [Download](https://devcenter.heroku.com/articles/heroku-command-line) and install Heroku Command Line on local machine:
+- In terminal install:
+```
+$ heroku —version
+```
+- Login to Heroku in terminal:
+```
+$ heroku login
+```
 
 ## License
 

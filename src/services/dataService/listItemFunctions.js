@@ -1,17 +1,16 @@
 const {ListItem} = require('./db')
 
-function findListItems(id) {
-  return ListItem.findAll({
-    where: {
-    listId: id,
-    },
-  })
+function findListItems() {
+  return ListItem.findAll()
 }
 
-function createListItem(id, description) {
-  return ListItem.create({
-    description: description,
-    listId: id,
+function createListItem(data) {
+  return ListItem.create(data)
+}
+
+function getListItem(id) {
+  return ListItem.findOne({
+    where: {id},
   })
 }
 
@@ -27,11 +26,7 @@ function updateListItem(id, data) {
   })
 }
 
-function getListItem (id) {
-  return ListItem.findOne({
-    where: {id},
-  })
-}
+
 
 module.exports = {
   findListItems,

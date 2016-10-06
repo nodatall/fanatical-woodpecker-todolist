@@ -11,7 +11,7 @@ test('dataService', function(t) {
       })
     })
     t.test('Create new list item', function (st) {
-      createListItem(2,'blah').then(function (listsItem) {
+      createListItem({listId: 2, description: 'blah'}).then(function (listsItem) {
         st.equal(listsItem.description, 'blah', 'Create list item and returned description' )
         st.equal(listsItem.listId, 2, 'New list item belongs to sepecified list')
         st.end()

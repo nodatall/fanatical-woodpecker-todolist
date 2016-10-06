@@ -8,7 +8,6 @@ const routes = require('./routes')
 const app = express()
 
 app.use(bodyParser.json())
-app.use(handleAuth())
 
 app.use(routes)
 
