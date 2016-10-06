@@ -1,12 +1,6 @@
 const {User, List} = require('./db')
 const listItems = require('./listItems')
 
-function getUser(id) {
-  return User.findOne({
-    where: {id},
-  })
-}
-
 function findLists() {
   return List.findAll()
 }
@@ -17,4 +11,23 @@ function getList(id) {
   })
 }
 
-module.exports = Object.assign({getUser, findLists, getList}, listItems)
+function createList(title) {
+  return List.create({
+    title: title,
+  })
+}
+
+function updateList(id) {
+  function getList(){
+    return List.findOne({
+      where: {id},
+  }
+  return List.update()
+}
+
+module.exports = Object.assign({
+  findLists,
+  getList,
+  createList,
+  updateList,
+}, listItems)

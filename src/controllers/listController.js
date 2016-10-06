@@ -21,6 +21,14 @@ function getList(req, res, next) {
     .catch(next)
 }
 
+function createList(req, res, next) {
+  dataService.createList()
+
+}
+
+
+
+
 module.exports = {
   findLists,
   getList,
