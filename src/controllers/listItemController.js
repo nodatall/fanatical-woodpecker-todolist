@@ -1,7 +1,7 @@
 const dataService = require('../services/dataService/listItemFunctions')
 
-function findListItem(req, res, next) {
-  dataService.findListItem()
+function findListItems(req, res, next) {
+  dataService.findListItems(req.id)
     .then(listsItem => {
       res.status(200).json(listsItem)
     })
@@ -9,7 +9,7 @@ function findListItem(req, res, next) {
 }
 
 function createListItem(req, res, next) {
-  dataService.createListItem()
+  dataService.createListItem(req.id, req.description)
     .then(listsItem => {
       res.status(200).json(listsItem)
     })
@@ -17,7 +17,7 @@ function createListItem(req, res, next) {
 }
 
 function deleteListItem(req, res, next) {
-  dataService.deleteListItem()
+  dataService.deleteListItem(req.id)
     .then(listsItem => {
       res.status(204).send("Successfully deleted")
     })
@@ -25,7 +25,7 @@ function deleteListItem(req, res, next) {
 }
 
 function updateListItem(req, res, next) {
-  dataService.updateListItem()
+  dataService.updateListItem(req.id, req.data)
     .then(listsItem => {
       res.status(200).json(listsItem)
     })
@@ -33,7 +33,7 @@ function updateListItem(req, res, next) {
 }
 
 function getListItem(req, res, next) {
-  dataService.getListItem()
+  dataService.getListItem(req.id)
     .then(listItems => {
       res.status(200).send(listItems)
     })
@@ -41,7 +41,7 @@ function getListItem(req, res, next) {
 }
 
 module.exports = {
-  findListItem,
+  findListItems,
   createListItem,
   deleteListItem,
   updateListItem,

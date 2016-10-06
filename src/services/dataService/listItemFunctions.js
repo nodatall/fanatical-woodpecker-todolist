@@ -1,14 +1,17 @@
 const {ListItem} = require('./db')
 
-function findListItem(id) {
-  return ListItem.findOne({
-    where: {id},
+function findListItems(id) {
+  return ListItem.findAll({
+    where: {
+    listId: id,
+    },
   })
 }
 
-function createListItem(description) {
+function createListItem(id, description) {
   return ListItem.create({
-    description: description
+    description: description,
+    listId: id,
   })
 }
 
@@ -19,21 +22,19 @@ function deleteListItem(id) {
 }
 
 function updateListItem(id, data) {
-  return findListItem(id).then(function (listItem) {
+  return getListItem(id).then(function (listItem) {
       return listItem.update(data)
   })
 }
 
 function getListItem (id) {
-  return ListItem.findAll({
-    where: {
-    listId: id,
-    },
+  return ListItem.findOne({
+    where: {id},
   })
 }
 
 module.exports = {
-  findListItem,
+  findListItems,
   createListItem,
   deleteListItem,
   updateListItem,
