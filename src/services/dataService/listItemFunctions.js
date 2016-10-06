@@ -19,9 +19,7 @@ function deleteListItem(id) {
 }
 
 function updateListItem(id, data) {
-  return ListItem.findOne({
-      where: {id},
-    }).then(function (listItem) {
+  return findListItem(id).then(function (listItem) {
       return listItem.update(data)
   })
 }
