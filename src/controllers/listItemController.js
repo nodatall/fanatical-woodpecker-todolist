@@ -16,8 +16,8 @@ function createListItem(req, res, next) {
     .catch(next)
 }
 
-function deleteListsItem(req, res, next) {
-  dataService.deleteListsItem()
+function deleteListItem(req, res, next) {
+  dataService.deleteListItem()
     .then(listsItem => {
       res.status(204).send("Successfully deleted")
     })
@@ -43,7 +43,7 @@ function getListItem(req, res, next) {
 module.exports = {
   findListItem,
   createListItem,
-  deleteListsItem,
+  deleteListItem,
   updateListItem,
   getListItem
 }

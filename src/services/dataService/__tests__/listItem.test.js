@@ -1,6 +1,6 @@
 const test = require('../../../test')
 const seedData = require('../../../test/seedData')
-const {findListItem, createListsItem, deleteListsItem, updateListItem, getListItem} = require('../../dataService/listItemFunctions')
+const {findListItem, createListItem, deleteListItem, updateListItem, getListItem} = require('../../dataService/listItemFunctions')
 
 test('dataService', function(t) {
   return seedData().then(() => {
@@ -11,13 +11,13 @@ test('dataService', function(t) {
       })
     })
     t.test('Create new list item', function (st) {
-      createListsItem('blah').then(function (listsItem) {
+      createListItem('blah').then(function (listsItem) {
         st.equal(listsItem.description, 'blah', 'Create list item and returned description' )
         st.end()
       })
     })
     t.test('Delete list item', function (st) {
-      deleteListsItem(1).then(function () {
+      deleteListItem(1).then(function () {
         findListItem(1).then(function (listsItem) {
           st.equal(listsItem, null, 'Deleted a lists item' )
           st.end()

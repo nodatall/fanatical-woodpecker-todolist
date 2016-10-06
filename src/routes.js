@@ -22,6 +22,6 @@ router.get('/items', listItemController.findListItem)
 router.post('/items', listItemController.createListItem)
 router.get('/items/:itemId', listItemController.getListItem)
 router.put('/items/:itemId', listItemController.updateListItem)
-router.delete('/items/:itemId', listItemController.deleteListsItem)
+router.delete('/items/:itemId', listItemController.deleteListItem)
 
 module.exports = router

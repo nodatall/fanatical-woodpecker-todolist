@@ -6,13 +6,13 @@ function findListItem(id) {
   })
 }
 
-function createListsItem(description) {
+function createListItem(description) {
   return ListItem.create({
     description: description
   })
 }
 
-function deleteListsItem(id) {
+function deleteListItem(id) {
   return ListItem.destroy({
     where: {id},
   })
@@ -36,8 +36,8 @@ function getListItem (id) {
 
 module.exports = {
   findListItem,
-  createListsItem,
-  deleteListsItem,
+  createListItem,
+  deleteListItem,
   updateListItem,
   getListItem,
 }
