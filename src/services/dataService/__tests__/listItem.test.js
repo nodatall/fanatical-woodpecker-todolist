@@ -33,6 +33,7 @@ test('dataService', function(t) {
     t.test('Get list\'s items', function (st) {
       getListItem(2).then(function (listItems) {
         st.ok(listItems.length > 0, 'Returned a non-empty list')
+        st.ok(listItems[0].id != null, 'List items have id property')
         st.end()
       })
     })
