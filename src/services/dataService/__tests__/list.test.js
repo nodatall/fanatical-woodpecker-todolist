@@ -1,6 +1,6 @@
 const test = require('../../../test')
 const seedData = require('../../../test/seedData')
-const {getList, findLists, createList, updateList, deleteList} = require('../../dataService')
+const {getList, findLists, createList, updateList, deleteList} = require('../../dataService/lists')
 
 test('dataService', function(t) {
   return seedData().then(() => {
