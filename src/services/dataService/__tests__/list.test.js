@@ -1,6 +1,13 @@
-const test = require('../../../test')
-const seedData = require('../../../test/seedData')
-const {getList, findLists, createList, updateList, deleteList} = require('../../dataService/lists')
+const test = require('src/test')
+const seedData = require('src/test/seedData')
+
+const {
+  getList,
+  findLists,
+  createList,
+  updateList,
+  deleteList
+} = require('../lists')
 
 test('dataService', function(t) {
   return seedData().then(() => {

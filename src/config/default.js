@@ -1,4 +1,5 @@
 module.exports = {
+  appName: 'To Do App',
   port: process.env.PORT || 3000,
   db: {
     url: process.env.DATABASE_URL,

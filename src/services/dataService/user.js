@@ -1,4 +1,4 @@
-const {User} = require('./db')
+const {models: {User}} = require('./db')
 
 function findUsers() {
 	return User.findAll()

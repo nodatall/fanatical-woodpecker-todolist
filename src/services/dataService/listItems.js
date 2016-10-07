@@ -1,4 +1,4 @@
-const {ListItem} = require('./db')
+const {models: {ListItem}} = require('./db')
 
 function findListItems() {
   return ListItem.findAll()

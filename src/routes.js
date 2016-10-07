@@ -2,9 +2,9 @@
 const express = require('express')
 const router = express()
 
-const userController = require('./controllers/userController')
-const listController = require('./controllers/listController')
-const listItemController = require('./controllers/listItemController')
+const userController = require('src/controllers/userController')
+const listController = require('src/controllers/listController')
+const listItemController = require('src/controllers/listItemController')
 
 router.get('/users', userController.findUsers)
 router.post('/users', userController.createUser)

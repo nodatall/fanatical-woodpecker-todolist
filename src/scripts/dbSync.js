@@ -1,6 +1,6 @@
-const {db} = require('../services/dataService/db')
+const dataService = require('src/services/dataService')
 
-db.sync()
+dataService.sync()
   .then(() => {
     console.log('Database sync complete')
     process.exit(0)

@@ -1,6 +1,7 @@
 const Promise = require('bluebird')
 const Sequelize = require('sequelize')
-const config = require('../../../config')
+
+const config = require('src/config')
 
 let db = new Sequelize(config.db.url, config.db.options)
 
@@ -21,19 +22,26 @@ const ListItem = db.define('listItem', {
 })
 ListItem.belongsTo(List)
 
+function sync() {
+  return db.sync()
+}
+
 function reset(options) {
   const models = [ListItem, List, User]
   return Promise.each(models, model => {
     return model.drop(options)
   }).then(() => {
-    return db.sync()
+    return sync()
   })
 }
 
 module.exports = {
   db,
+  sync,
   reset,
-  User,
-  List,
-  ListItem,
+  models: {
+    User,
+    List,
+    ListItem,
+  }
 }

@@ -1,4 +1,4 @@
-const seedData = require('../test/seedData')
+const seedData = require('src/test/seedData')
 
 seedData()
   .then(() => {

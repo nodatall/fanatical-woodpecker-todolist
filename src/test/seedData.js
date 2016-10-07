@@ -1,41 +1,46 @@
 const Promise = require('bluebird')
-const {reset, User, List, ListItem} = require('../services/dataService/db')
 
-function seedData(options) {
-  const {
-    userCount = 2,
-    listCount = 2,
-    listItemCount = 2,
-  } = options || {}
+const {reset, models: {User, List, ListItem}} = require('src/services/dataService/db')
+
+function seedData() {
+  // TODO: allow to be specified as options
+  const counts = {
+    users: 2,
+    lists: 2,
+    items: 2,
+  }
 
   return reset({cascade: true})
     .then(() => {
       const users = []
-      for (let i = 0; i < userCount; i++) {
+      for (let i = 0, count = counts.users; i < count; i++) {
         users.push(randomUser())
       }
+
       return Promise.mapSeries(users, user => {
         return User.create(user)
       })
     })
     .then(users => {
-      const lists = []
-      users.forEach(user => {
-        for (let i = 0; i < listCount; i++) {
-          lists.push(randomList(user.id))
+      const lists = users.reduce((result, user) => {
+        for (let i = 0, count = counts.lists; i < count; i++) {
+          result.push(randomList(user.id))
         }
-      })
+        return result
+      }, [])
+
       return Promise.mapSeries(lists, list => {
         return List.create(list)
       })
     })
     .then(lists => {
-      const listItems = []
-      lists.forEach(list => {
-        for (let i = 0; i < listItemCount; i++) {
-          listItems.push(randomListItem(list.id))
+      const listItems = lists.reduce((result, list) => {
+        for (let i = 0, count = counts.items; i < count; i++) {
+          result.push(randomListItem(list.id))
         }
-      })
+        return result
+      }, [])
+
       return Promise.mapSeries(listItems, listItem => {
         return ListItem.create(listItem)
       })
