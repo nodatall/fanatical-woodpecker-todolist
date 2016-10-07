@@ -18,7 +18,7 @@ router.get('/lists/:listId', listController.getList)
 router.put('/lists/:listId', listController.updateList)
 router.delete('/lists/:listId', listController.deleteList)
 
-router.get('/items', listItemController.findListsItem)
+router.get('/items', listItemController.findListItems)
 router.post('/items', listItemController.createListItem)
 router.get('/items/:itemId', listItemController.getListItem)
 router.put('/items/:itemId', listItemController.updateListItem)
