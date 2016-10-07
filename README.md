@@ -69,7 +69,7 @@ $ npm run local
 $ npm test
 ```
 
-### Instructions for deploying to Heroku
+### Instructions for deploying to Heroku ☁️
 - Create Heroku account [here](https://signup.heroku.com/)
 - [Download](https://devcenter.heroku.com/articles/heroku-command-line) and install Heroku Command Line on local machine
 - Verify install:
