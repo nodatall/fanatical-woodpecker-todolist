@@ -10,26 +10,24 @@ function getUser(id) {
   })
 }
 
-function createUser(name, email, passwordHash) {
-	return User.create({
-		name: name,
-		email: email,
-		passwordHash: passwordHash
-	})
+function createUser(data) {
+	return User.create(data)
 }
 
-function updateUser(id) {
-	return User.findOne({
-		where: {id},
-	})
+function updateUser(id, data) {
+	return User.update(data, {where: {id}, returning: true})
+		.then(updates => {
+			const [numUpdated, updatedUsers] = updates
+			return updatedUsers[0]
+		})
 }
 
 function deleteUser(id) {
-	return User.findOne({
-		where: {id},
-	})
+	return User.destroy({where: {id}})
+		.then(updates => {
+			return null
+		})
 }
-
 
 
 module.exports = {

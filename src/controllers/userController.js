@@ -1,17 +1,49 @@
-function login(req, res, next) {
-  // extract email, password
-  // encrypt the password
-  // look up user by email + encrypted password
-  // if found, return user
-  // if not found, return error
+const dataService = require('../services/dataService/user')
+
+function findUsers(req, res, next) {
+ dataService.findUsers()
+    .then(user => {
+      res.status(200).json(user)
+    })
+    .catch(next)
 }
 
-function logout(req, res, next) {
-  // clear cookie
-  // return OK
+function getUser(req, res, next) {
+	dataService.getUser(req.params.userId)
+	.then(user => {
+		res.status(200).json(user)
+	})
+	.catch(next)
+}
+
+function createUser(req, res, next) {
+	dataService.createUser(req.body)
+	.then(user => {
+		res.status(200).json(user)
+	})
+	.catch(next)
+}
+
+function updateUser(req, res, next) {
+	dataService.updateUser(req.params.userId, req.body)
+	.then(user => {
+		res.status(200).json(user)
+	})
+	.catch(next)
+}
+
+function deleteUser(req, res, next) {
+	dataService.deleteUser(req.params.userId)
+	.then(user => {
+		res.status(200).json(user)
+	})
+	.catch(next)	
 }
 
 module.exports = {
-  login,
-  logout,
+  findUsers,
+  getUser,
+  createUser,
+  updateUser,
+  deleteUser,
 }
