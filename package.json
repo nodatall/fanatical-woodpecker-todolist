@@ -27,6 +27,7 @@
     "body-parser": "^1.15.2",
     "config": "^1.21.0",
     "cookie": "^0.3.1",
+      "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
@@ -34,7 +35,6 @@
     "sequelize": "^3.24.3"
   },
   "devDependencies": {
-    "dotenv": "^2.0.0",
     "nodemon": "^1.10.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.2"
