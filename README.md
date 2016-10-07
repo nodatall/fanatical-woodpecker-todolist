@@ -4,7 +4,7 @@
 
 - [X] Design data model
 - [ ] Implement web API
-  - [ ] Start a server listening on a specified port with `npm start`
+  - [ ] Start a server listening on a specified port with `npm run local`
   - [ ] Authentication via cookies w/ JWT
     - [ ] Login
     - [ ] Logout
@@ -17,7 +17,7 @@
   - [X] Delete list
   - [X] Retrieve a list's items
   - [X] Edit an item's description
-  - [ ] Mark item as completed/not completed
+  - [X] Mark item as completed/not completed
   - [X] Delete an item
 - [X] Implement tests
 - [X] Create documentation
@@ -55,7 +55,7 @@ $ createdb todo
 
 - In terminal:
 ```
-$ npm run start
+$ npm run local
 ```
 
 #### Instructions for running tests
@@ -75,6 +75,19 @@ $ heroku —version
 ```
 $ heroku login
 ```
+- Create Heroku app:
+```
+$ heroku create
+```
+- Deploy code:
+```
+$ git push heroku master
+```
+- Verify app is running:
+```
+$ heroku ps:scale web=1
+```
+- Go your Heroku account and find the newly created app. Navigate to resources tab, and search for Heroku Postgres. Install add on.
 
 ## License
 

@@ -17,6 +17,7 @@ List.belongsTo(User)
 
 const ListItem = db.define('listItem', {
   description: {type: Sequelize.TEXT},
+  complete: {type: Sequelize.BOOLEAN, defaultValue: false}
 })
 ListItem.belongsTo(List)
 

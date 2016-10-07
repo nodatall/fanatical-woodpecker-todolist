@@ -30,8 +30,9 @@ test('dataService', function(t) {
       getListItem(2).then(function (listItem) {
         originalDes = listItem.description
       })
-      updateListItem(2,{description: 'blarg'}).then(function (listItem) {
+      updateListItem(2,{description: 'blarg', complete: true}).then(function (listItem) {
         st.equal(listItem.description, 'blarg', 'Updated list item description and returned new description' )
+        st.equal(listItem.complete, true, 'Updated list item complete value to true' )
         st.ok(listItem.description != originalDes, 'Updated description is different than original')
         st.end()
       })
