@@ -1,4 +1,4 @@
-const dataService = require('../services/dataService/listItemFunctions')
+const dataService = require('../services/dataService')
 
 function findListItems(req, res, next) {
   dataService.findListItems()
@@ -11,7 +11,7 @@ function findListItems(req, res, next) {
 function createListItem(req, res, next) {
   dataService.createListItem(req.body)
     .then(listsItem => {
-      res.status(200).json(listsItem)
+      res.status(201).json(listsItem)
     })
     .catch(next)
 }
@@ -35,7 +35,7 @@ function updateListItem(req, res, next) {
 function deleteListItem(req, res, next) {
   dataService.deleteListItem(req.params.itemId)
     .then(listsItem => {
-      res.status(204).send("Successfully deleted")
+      res.status(204).send()
     })
     .catch(next)
 }

@@ -15,18 +15,16 @@ function getListItem(id) {
 }
 
 function deleteListItem(id) {
-  return ListItem.destroy({
-    where: {id},
-  })
+  return ListItem.destroy({where: {id}})
 }
 
 function updateListItem(id, data) {
-  return getListItem(id).then(function (listItem) {
-      return listItem.update(data)
-  })
+  return ListItem.update(data, {where: {id}, returning: true})
+    .then(updatedListItems => {
+      const [numRows, updatedRows] = updatedListItems
+      return updatedRows[0]
+    })
 }
-
-
 
 module.exports = {
   findListItems,

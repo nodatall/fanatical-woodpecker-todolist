@@ -1,4 +1,5 @@
 const {User, List} = require('./db')
+const listItems = require('./listItems')
 
 function getUser(id) {
   return User.findOne({
@@ -16,8 +17,4 @@ function getList(id) {
   })
 }
 
-module.exports = {
-  getUser,
-  findLists,
-  getList,
-}
+module.exports = Object.assign({getUser, findLists, getList}, listItems)
