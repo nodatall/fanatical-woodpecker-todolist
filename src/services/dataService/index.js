@@ -1,3 +1,4 @@
-const user = require('./user')
+const lists = require('./lists')
+const listItems = require('./listItems')
 
-module.exports = Object.assign({}, user)
+module.exports = Object.assign({}, lists, listItems)
