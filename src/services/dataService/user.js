@@ -23,10 +23,7 @@ function updateUser(id, data) {
 }
 
 function deleteUser(id) {
-	return User.destroy({where: {id}})
-		.then(updates => {
-			return null
-		})
+	return User.destroy({where: {id}}).then(() => null)
 }
 
 
