@@ -2,7 +2,6 @@ const bodyParser = require('body-parser')
 const express = require('express')
 
 const config = require('./config')
-const handleAuth = require('./middleware/auth')
 const routes = require('./routes')
 
 const app = express()
