@@ -1,16 +1,3 @@
-const {List} = require('./db')
+const user = require('./user')
 
-function findLists() {
-  return List.findAll()
-}
-
-function getList(id) {
-  return List.findOne({
-    where: {id},
-  })
-}
-
-module.exports = {
-  findLists,
-  getList,
-}
+module.exports = Object.assign({}, user)
