@@ -1,25 +1,30 @@
-# To Do List
+# To Do List Backend 📋
 
 ## Specifications
 
 - [X] Design data model
-- [ ] Implement web API
-  - [ ] Start a server listening on a specified port with `npm run local`
-  - [ ] Authentication via cookies w/ JWT
-    - [ ] Login
-    - [ ] Logout
-    - [ ] Error on invalid credentials
-  - [ ] Retrieve authenticated user's profile data
-  - [X] Update authenticated user's name, email, password
-  - [X] Retrieve user's lists
-  - [X] Create new list
-  - [X] Update existing list
-  - [X] Delete list
-  - [X] Retrieve a list's items
-  - [X] Edit an item's description
-  - [X] Mark item as completed/not completed
-  - [X] Delete an item
+- [X] Implement web API
+  - [X] Start a server listening on a specified port with `npm start`
+  - [X] Users
+    - [X] Get
+    - [X] Update
+    - [X] Create
+    - [X] Delete
+    - [X] Find all
+  - [X] Lists
+    - [X] Get
+    - [X] Create
+    - [X] Update
+    - [X] Delete
+    - [X] Find all
+  - [X] List Items
+    - [X] Get
+    - [X] Create
+    - [X] Update
+    - [X] Delete
+    - [X] Find all
 - [X] Implement tests
+- [X] Deploy to Heroku
 - [X] Create documentation
   - [X] Local environment setup
   - [X] Deployment
@@ -34,7 +39,7 @@
 $ npm i
 ```
 
-#### Instructions for setting up local database
+#### Setting up local database
 
 - [Download](http://postgresapp.com/) postgres app, then open
 - Set path by adding the follow line to ~/.bash_profile (if using zsh ~/.zshrc):
@@ -88,10 +93,8 @@ $ git push heroku master
 $ heroku ps:scale web=1
 ```
 - Go your Heroku account and find the newly created app. Navigate to resources tab, and search for Heroku Postgres. Install add on.
+- Open app! 😆
 
 ## License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
-<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-
-[mit-license](https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)
