@@ -16,17 +16,15 @@ function createList(data) {
 }
 
 function updateList(id, data) {
-  return getList(id).then(list => {
-    return list.update(data)
-  })
+  return List.update(data, {where: {id}, returning: true})
+    .then(updatedLists => {
+      const [numRowsUpdated, updatedRows] = updatedLists
+      return updatedRows[0]
+    })
 }
 
 function deleteList(id) {
-  //find the list by id
-  return getList(id).then(list => {
-    //delete the mufuka
-    return list.destroy()
-  })
+  return List.destroy({where: {id}})
 }
 
 module.exports = {
