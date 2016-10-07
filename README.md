@@ -1,5 +1,10 @@
 # To Do List Backend 📋
 
+##### Demo
+Server Base URL:
+http://http://thawing-chamber-52129.herokuapp.com
+
+---
 ## Specifications
 
 - [X] Design data model
@@ -46,7 +51,7 @@ $ npm i
 ```
 $ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 ```
-- In terminal:  
+- In terminal:
 ```
 $ createdb todo
 ```
