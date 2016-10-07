@@ -1,11 +1,11 @@
 # To Do List Backend 📋
 
-##### Demo
-Server Base URL:
-http://http://thawing-chamber-52129.herokuapp.com
+#### Demo
+Server Base URL:  
+http://thawing-chamber-52129.herokuapp.com
 
 ---
-## Specifications
+#### Specifications
 
 - [X] Design data model
 - [X] Implement web API
@@ -37,7 +37,7 @@ http://http://thawing-chamber-52129.herokuapp.com
   - [X] Licensing (OSS, e.g. MIT)
 
 ---
-### Instructions for running app in local environment
+#### Instructions for running app in local environment
 - [Download](https://nodejs.org/en/download/) and install node
 - Navigate to repo inside terminal, then type:
 ```
@@ -74,7 +74,7 @@ $ npm run local
 $ npm test
 ```
 
-### Instructions for deploying to Heroku ☁️
+#### Instructions for deploying to Heroku ☁️
 - Create Heroku account [here](https://signup.heroku.com/)
 - [Download](https://devcenter.heroku.com/articles/heroku-command-line) and install Heroku Command Line on local machine
 - Verify install:
@@ -100,6 +100,6 @@ $ heroku ps:scale web=1
 - Go your Heroku account and find the newly created app. Navigate to resources tab, and search for Heroku Postgres. Install add on.
 - Open app! 😆
 
-## License
+#### License
 
 [MIT](https://opensource.org/licenses/MIT)
