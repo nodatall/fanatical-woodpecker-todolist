@@ -30,11 +30,12 @@ http://thawing-chamber-52129.herokuapp.com
     - [X] Find all
 - [X] Implement tests
 - [X] Deploy to Heroku
-- [X] Create documentation
+- [ ] Create documentation
   - [X] Local environment setup
   - [X] Deployment
   - [X] Testing
   - [X] Licensing (OSS, e.g. MIT)
+  - [ ] API docs
 
 ---
 #### Instructions for running app in local environment
