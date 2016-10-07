@@ -47,12 +47,6 @@ function deleteList(req, res, next) {
   .catch(next)
 }
 
-
-
-
-
-
-
 module.exports = {
   findLists,
   getList,
