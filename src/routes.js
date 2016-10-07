@@ -4,6 +4,7 @@ const router = express()
 
 const userController = require('./controllers/userController')
 const listController = require('./controllers/listController')
+const listItemController = require('./controllers/listItemController')
 
 router.get('/users', userController.findUsers)
 router.post('/users', userController.createUser)
@@ -17,7 +18,7 @@ router.get('/lists/:listId', listController.getList)
 router.put('/lists/:listId', listController.updateList)
 router.delete('/lists/:listId', listController.deleteList)
 
-router.get('/items', listItemController.findListsItem)
+router.get('/items', listItemController.findListItems)
 router.post('/items', listItemController.createListItem)
 router.get('/items/:itemId', listItemController.getListItem)
 router.put('/items/:itemId', listItemController.updateListItem)

@@ -4,21 +4,21 @@
 
 - [X] Design data model
 - [ ] Implement web API
-  - [ ] Start a server listening on a specified port with `npm start`
+  - [ ] Start a server listening on a specified port with `npm run local`
   - [ ] Authentication via cookies w/ JWT
     - [ ] Login
     - [ ] Logout
     - [ ] Error on invalid credentials
   - [ ] Retrieve authenticated user's profile data
-  - [ ] Update authenticated user's name, email, password
-  - [ ] Retrieve user's lists
-  - [ ] Create new list
-  - [ ] Update existing list
-  - [ ] Delete list
-  - [ ] Retrieve a list's items
-  - [ ] Edit an item's description
-  - [ ] Mark item as completed/not completed
-  - [ ] Delete an item
+  - [X] Update authenticated user's name, email, password
+  - [X] Retrieve user's lists
+  - [X] Create new list
+  - [X] Update existing list
+  - [X] Delete list
+  - [X] Retrieve a list's items
+  - [X] Edit an item's description
+  - [X] Mark item as completed/not completed
+  - [X] Delete an item
 - [X] Implement tests
 - [X] Create documentation
   - [X] Local environment setup
@@ -28,7 +28,7 @@
 
 ---
 ### Instructions for running app in local environment
-- Download and install node: https://nodejs.org/en/download/
+- [Download](https://nodejs.org/en/download/) and install node
 - Navigate to repo inside terminal, then type:
 ```
 $ npm i
@@ -36,7 +36,7 @@ $ npm i
 
 #### Instructions for setting up local database
 
-- Download postgres app http://postgresapp.com/ then open
+- [Download](http://postgresapp.com/) postgres app, then open
 - Set path by adding the follow line to ~/.bash_profile (if using zsh ~/.zshrc):
 ```
 $ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
@@ -55,7 +55,7 @@ $ createdb todo
 
 - In terminal:
 ```
-$ npm run start
+$ npm run local
 ```
 
 #### Instructions for running tests
@@ -64,10 +64,34 @@ $ npm run start
 $ npm test
 ```
 
+### Instructions for deploying to Heroku
+- Create Heroku account [here](https://signup.heroku.com/)
+- [Download](https://devcenter.heroku.com/articles/heroku-command-line) and install Heroku Command Line on local machine
+- Verify install:
+```
+$ heroku —version
+```
+- Login to Heroku in terminal:
+```
+$ heroku login
+```
+- Create Heroku app:
+```
+$ heroku create
+```
+- Deploy code:
+```
+$ git push heroku master
+```
+- Verify app is running:
+```
+$ heroku ps:scale web=1
+```
+- Go your Heroku account and find the newly created app. Navigate to resources tab, and search for Heroku Postgres. Install add on.
 
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
 <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-[mit-license]: https://opensource.org/licenses/MIT
+[mit-license](https://opensource.org/licenses/MIT)
