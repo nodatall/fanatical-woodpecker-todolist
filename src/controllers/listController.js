@@ -21,13 +21,10 @@ function getList(req, res, next) {
     .catch(next)
 }
 
-
-//new stuff below here
-
 function createList(req, res, next) {
   dataService.createList(req.body)
-  .then(lists => {
-    res.status(200).json(lists)
+  .then(list => {
+    res.status(200).json(list)
   })
   .catch(next)
 
@@ -45,7 +42,7 @@ function updateList(req, res, next) {
 function deleteList(req, res, next) {
   dataService.deleteList(req.params.listId)
   .then(lists => {
-    res.status(200).json(lists)
+    res.status(204).send()
   })
   .catch(next)
 }
